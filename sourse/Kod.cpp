@@ -149,7 +149,7 @@ class RobotStates : System
                     if (e.event == receive_turn)
                     {
                         state = Estate::turn_left;
-                        rotating();
+                        turning();
                         cout << "Состояние: " << state << " -- Turn left" << endl;
                     } 
                     else if (e.event == move_error)
