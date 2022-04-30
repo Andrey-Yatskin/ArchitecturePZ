@@ -90,7 +90,7 @@ int __cdecl main(int argc, char** argv)
     }
 
     // Send an initial buffer
-    iResult = send(ConnectSocket, arr, 10, 0);
+    iResult = send(ConnectSocket, arr, 10 + 1, 0);
     if (iResult == SOCKET_ERROR) {
         printf("send failed with error: %d\n", WSAGetLastError());
         closesocket(ConnectSocket);
@@ -112,7 +112,7 @@ int __cdecl main(int argc, char** argv)
     // Receive until the peer closes the connection
     do {
 
-        iResult = recv(ConnectSocket, arr, 10, 0);
+        iResult = recv(ConnectSocket, arr, 10 + , 0);
         if (iResult > 0)
             printf("Bytes received: %d\n", iResult);
         else if (iResult == 0)
